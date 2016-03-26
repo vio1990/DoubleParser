@@ -55,7 +55,19 @@ public class DoublesTest {
 
     @Test
     public void checkComplexNumberInput() {
-        Double actual = new Doubles().parse("-.56e-2");
-        assertThat(actual, is(-.56e-2));
+        Double actual = new Doubles().parse("-.58e-2");
+        assertThat(actual, is(-.58e-2));
+    }
+
+    @Test
+    public void checkStartNegativeNumber() {
+        Double actual = new Doubles().parse("-.56");
+        assertThat(actual, is(-.56));
+    }
+
+    @Test
+    public void checkZeroNumber() {
+        Double actual = new Doubles().parse("-0.");
+        assertThat(actual, is(-0.));
     }
 }
